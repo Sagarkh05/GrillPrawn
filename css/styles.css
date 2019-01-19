@@ -85,9 +85,9 @@ select:hover{cursor:pointer}
 .menu__content{color:#4a4a4a;font-family:Roboto-Regular;font-size:24px;letter-spacing:.19px;line-height:1.1;padding:30px 0}
 .menu__description{margin:0 16px}
 .menu__image{width:100%;height:auto;margin-top:auto}
-.newsletter__addfriend{font-family:Roboto-Regular;font-size:18px;border:1px solid;color:#ffff;margin-top:37px;letter-spacing:.23px;background-color:transparent;padding: 12px 55px}
+.newsletter__addfriend{font-family:Roboto-Regular;font-size:18px;border:1px solid #ffff !important;color:#ffff !important;margin-top:37px;letter-spacing:.23px;background-color:transparent  !important;padding: 12px 55px}
 .newsletter__addfriend:focus{outline: 1px solid #ccc;}
-.newsletter__trash{border:none;background-color:transparent;color:#ffff;font-family:Roboto-Bold;font-size:18px;letter-spacing:.23px;margin-top:33px;padding:20px 0}
+.newsletter__trash{border:none !important;background-color:transparent !important;color:#ffff !important;font-family:Roboto-Bold;font-size:18px;letter-spacing:.23px;margin-top:33px;padding:20px 0}
 .newsletter__trash:focus{outline: 1px solid #ccc;}
 .newsletter__trash:hover{border:none;background-color:transparent}
 .newsletter__icon{float:left;width:14px;height:20px;text-indent:-99999em;background:url(../images/remove__icon.png) no-repeat;background-size:100%;margin-right:8px}
@@ -196,8 +196,7 @@ select:hover{cursor:pointer}
     .checkbox__input:checked+.checkbox__label::after{left:5px;top:6px;height:5px;width:10px}
     .newsletter{padding:30px 0}
 	.newsletter__heading{font-size:35px}
-	.newsletter__addfriend,.newsletter__label,.newsletter__submit,.newsletter__trash,.text{font-size:14px}
-	.text{padding:12px 11px}
+	.text{padding:12px 11px;font-size:14px}
 	.btn{padding:12px 55px}
 	.newsletter__description{width:60%;font-size:14px;margin-top:18px}
 	.newsletter__rightarrow{margin-top:3px}
