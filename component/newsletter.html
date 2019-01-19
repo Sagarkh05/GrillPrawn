@@ -1,0 +1,38 @@
+<div class="newsletter">
+    <div class="newsletter__container">
+        <span class="newsletter__heading">Spread the world !</span>
+        <p class="newsletter__description">Our recipes are awesome, sign up to our newsletter and invite friends to join the Grilled Prawn cult</p>
+        <div class="newsletter__subscription">
+            <form id="frmNewsletter" name="newsletter" onsubmit="btnAdd_click(event,newsletter); return false;">
+                <div id="newsletter-org" class="newsletter__grid grid--noborder">
+                    <div class="newsletter__item">
+                        <label class="newsletter__label" for="txtName">Name</label>
+                        <input class="text newsletter__control" aria-label="enter firstname" aria-required="true" aria-invalid="true" name="name" minlength="3" maxlength="10" pattern="[A-Za-z -]+"
+                            type="text" id="txtName" autocomplete="off" placeholder="Name" required aria-required="true">
+                    </div>
+                    <div class="newsletter__item">
+                        <label class="newsletter__label" for="txtSurname">Surname</label>
+                        <input class="text newsletter__control" aria-label="enter surname" aria-required="true" aria-invalid="true" name="surname" minlength="3" maxlength="10" pattern="[A-Za-z -]+"
+                            type="text" id="txtSurname" autocomplete="off" placeholder="Surname" required aria-required="true">
+                    </div>
+                    <div class="newsletter__item">
+                        <label class="newsletter__label" for="txtEmail">Email address</label>
+                        <input class="text newsletter__control" aria-label="email id" aria-required="true" aria-invalid="true" name="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            id="txtEmail" autocomplete="off" placeholder="Email address" required aria-required="true">
+                    </div>
+                    <div class="newsletter__item content--center">
+                        <input type="submit" id="btn_add" aria-label="for add friend" value="Add Friend" class="btn newsletter__addfriend">
+                        <button id="btn_remove" class="btn newsletter__trash" aria-label="for remove friend" onclick="btnRemove_click(this)">
+                            <i class="newsletter__icon"></i>Remove</button>
+                    </div>
+                </div>
+            </form>
+            <div class="newsletter__submitsection">
+                <button id="btn_send" class="btn newsletter__submit" aria-label="for send friends" onclick="btnsend_click()">Send
+                    <i class="newsletter__rightarrow"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
