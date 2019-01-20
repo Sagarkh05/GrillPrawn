@@ -47,9 +47,9 @@ body{background-color:#f6f6f6;font-family:Roboto-Regular}
 .search__items{font-family:Roboto-Bold;font-size:18px;letter-spacing:.14px}
 .search__select{border-radius:4px;border:2px solid #2f363e;margin:0 0 0 21px;width:213px;padding:15px 20px}
 .search__select::-ms-expand{display:none}
-select{-webkit-appearance:none;-moz-appearance:none;appearance:none;background:url(/images/dropdown_arrow.png) 87% 50% no-repeat !important;background-size:auto}
+select{-webkit-appearance:none;-moz-appearance:none;appearance:none;background:url(../images/dropdown_arrow.png) 87% 50% no-repeat !important;background-size:auto}
 select:hover{cursor:pointer}
-.search__searchbox{float:right;overflow:hidden;background:url(/images/search__icon.png) left no-repeat #f6f6f6 !important;padding:10px 10px 10px 30px;outline:0;font-family:Roboto-Regular;font-size:16px;width:170px}
+.search__searchbox{float:right;overflow:hidden;background:url(../images/search__icon.png) left no-repeat #f6f6f6 !important;padding:10px 10px 10px 30px;outline:0;font-family:Roboto-Regular;font-size:16px;width:170px}
 .search__iconpanal{text-decoration:none}
 .search__icon{width:24px;height:24px;margin-right:13px;float:left}
 .search__recipe{color:#4a4a4a;font-family:Roboto-Bold;font-size:18px;letter-spacing:.18px;float:left;margin-top:3px}
@@ -235,7 +235,7 @@ select:hover{cursor:pointer}
     .search__sort{margin-left:10px}
     .search__sortby{font-size:12px}
     .search__searchbox{padding:8px 10px 6px 30px;width:78px;font-size:12px}
-    .search__select{margin:0 0 0 10px;padding:5px 10px;width:145px}
+    .search__select{margin:0 0 0 10px;padding:5px 10px;width:125px}
     .search__recipe{font-size:12px}
     .search__foodcontainer{padding:25px 0}
     .search__foodtype{font-size:12px}
