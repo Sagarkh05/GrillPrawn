@@ -264,8 +264,8 @@ select:hover{cursor:pointer}
     .navigation__title{font-size:20px;margin-left:14px}
     .banner{margin:0}
     .banner__image{width:100%}
-    .banner__recipedescription{text-align:left;padding:10px 0;width:100%;height:auto;position:relative}
-    .banner__leftcontainer{margin:50px 0 0 10px;text-align:left}
+    .banner__recipedescription{text-align:left;padding:15px 0px;width:100%;height:auto;position:relative}
+    .banner__leftcontainer{margin:50px 0px 0px 10px;text-align:left}
     .banner__latestrecipe{font-size:14px}
     .banner__recipe{font-size:20px;line-height:1}
     .banner__recipedetails{font-size:12px;line-height:1.2}
@@ -277,8 +277,12 @@ select:hover{cursor:pointer}
     .search__partition{width:100%;border:none;border-bottom:1px solid #ffff;padding:10px 0}
     .search__cusineitems{width:100%}
     .partition--width{width:100%}
-    .search__sort{margin:0}
-    .search__mobile{display:block;padding:10px 0}
+    .search__mobile{display:block;padding:10px 0;overflow: hidden;}
+    .search__sort{margin:0; width: 100%}
+    .search__sortby{font-size: 16px;}
+    select{ background:url(../images/dropdown_arrow.png) 95% 40% no-repeat !important;}
+    .search__select{ width: 100%; margin: 10px 0px; font-size: 12px;}
+    .search__searchbox{width: calc(100% - 40px);border-bottom: 1px solid #4a4a4a;}
     .rsp--desktop{display:none}
     .menu__heading{font-size:12px}
     .menu__card{grid-template-columns:repeat(1,1fr)}
