@@ -202,7 +202,7 @@
 	.text{padding:12px 11px;font-size:14px}
 	.btn{padding:12px 55px}
 	.newsletter__description{width:60%;font-size:14px;margin-top:18px}
-	.newsletter__rightarrow{margin-top:3px}
+	.newsletter__rightarrow{margin-top:7px}
 	.newsletter__grid{grid-template-columns:repeat(2,1fr);grid-gap:5% 2%;padding:25px 0}
 	.newsletter__friendlist{padding-top:10px}
 	.newsletter__icon{width:12px;margin-right:10px}
@@ -247,7 +247,7 @@
     .checkbox__input:checked+.checkbox__label::after{left:5px;top:6px;height:5px;width:10px}
     .newsletter__description{width:80%;font-size:14px;margin-top:15px}
 	.newsletter__grid{grid-template-columns:repeat(2,1fr);padding:15px 0;grid-gap:8% 2%}
-	.newsletter__rightarrow{width:13px;margin-left:8px;margin-top:4px}
+	.newsletter__rightarrow{width:13px;margin-left:8px}
 	.newsletter__heading{font-size:35px}
 	.newsletter__control,.newsletter__label{font-size:14px}
     .menu{padding:20px 0}
