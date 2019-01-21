@@ -10,7 +10,7 @@
     <title>Grilled Prawn</title>
 </head>
 
-<body>
+<body class="body">
     <header class="navigation">
         <div class="navigation__container">
             <div class="navigation__leftcontainer">
@@ -71,13 +71,13 @@
             <li class="search__filter sortby--width rsp--desktop">
                 <div class="search__sort">
                     <span class="search__sortby" aria-label="sort recipes">Sort by</span>
-                    <select class="search__select">
+                    <select class="select search__select">
                         <option class="search__items"  aria-selected="true" selected >Newest First</option>
                     </select>
                 </div>
             </li>
             <li class="search__filter float--right rsp--desktop">
-                <input class="search__searchbox" aria-label="search recipes" minlength="3" placeholder="Search recipe" maxlength="20" type="text"
+                <input class="search__searchbox" aria-label="search recipes" aria-valuemin="3" aria-valuemax="10" minlength="3" maxlength="10" placeholder="Search recipe"  type="text"
                     name="search" />
             </li>
         </ul>
@@ -200,7 +200,7 @@
         <div class="search__mobile">
             <div class="search__sort">
                 <span class="search__sortby" aria-label="sort recipes">Sort by</span>
-                <select class="search__select">
+                <select class="select search__select">
                     <option class="search__items" aria-selected="true" selected>Newest First</option>
                 </select>
             </div>
@@ -372,13 +372,13 @@
                         <div class="newsletter__item">
                             <label class="newsletter__label" for="txtName">Name</label>
                             <input class="text newsletter__control" aria-label="enter firstname" aria-required="true" aria-invalid="true" name="name"
-                                minlength="3" maxlength="10" pattern="[A-Za-z -]+" type="text" id="txtName" autocomplete="off"
+                                minlength="3" maxlength="10" aria-valuemin="3" aria-valuemax="10" pattern="[A-Za-z -]+" type="text" id="txtName" autocomplete="off"
                                 placeholder="Name" required>
                         </div>
                         <div class="newsletter__item">
                             <label class="newsletter__label" for="txtSurname">Surname</label>
                             <input class="text newsletter__control" aria-label="enter surname" aria-required="true" aria-invalid="true" name="surname"
-                                minlength="3" maxlength="10" pattern="[A-Za-z -]+" type="text" id="txtSurname" autocomplete="off"
+                                minlength="3" maxlength="10" aria-valuemin="3" aria-valuemax="10" pattern="[A-Za-z -]+" type="text" id="txtSurname" autocomplete="off"
                                 placeholder="Surname" required>
                         </div>
                         <div class="newsletter__item">
