@@ -296,6 +296,7 @@ select:hover{cursor:pointer}
     .newsletter__addfriend{width:100%;margin-top:5px}
     .newsletter__trash{margin-top:0}
     .newsletter__submit{margin-top:10px}
+    .newsletter__rightarrow{margin-top:7px}
     .footer{padding:10px 0}
     .footer__container{width:65%}
     .footer__sections{width:auto;display:block}
