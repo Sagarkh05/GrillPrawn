@@ -4,7 +4,10 @@
 @font-face{font-family:'Roboto-Light';src:url(../fonts/Roboto-Light.eot?#iefix) format('embedded-opentype'),url(../fonts/Roboto-Light.woff) format('woff'),url(../fonts/Roboto-Light.ttf) format('truetype'),url(../fonts/Roboto-Light.svg#Roboto-Light) format('svg');font-weight:400;font-style:normal}
 @font-face{font-family:'OpenSans-Bold';src:url(../fonts/OpenSans-Bold.eot?#iefix) format('embedded-opentype'),url(../fonts/OpenSans-Bold.woff) format('woff'),url(../fonts/OpenSans-Bold.ttf) format('truetype'),url(../fonts/OpenSans-Bold.svg#Roboto-Light) format('svg');font-weight:400;font-style:normal}
 .body{background-color:#f6f6f6;font-family:Roboto-Regular}
-.navigation{margin:20px 0 0;position:relative;z-index:1;line-height:90px}
+.skip__links{margin: 0;padding: 0;list-style: none}
+.skip__links a{position: absolute;top: -3em;background: #000;color: #f6f6f6; text-decoration:none}
+.skip__links a:focus{top: 0}
+.navigation{margin:20px 0 0;position:relative;z-index:1;line-height:90px;outline: 0}
 .navigation__container{overflow:hidden;width:90%;margin:0 auto}
 .navigation__logocontext{display:inline-block;float:left}
 .navigation__logo{float:left;width:100px;height:100px;text-indent:-99999em;background:url(../images/Grilllogo.png) no-repeat;background-size:100%}
@@ -15,7 +18,7 @@
 .navigation__item:hover{font-family:Roboto-Bold}
 .mrg-rt--0{margin-right:0}
 .item--active{font-family:Roboto-Bold}
-.banner{width:100%;margin-top:-20px;position:relative}
+.banner{width:100%;margin-top:-20px;position:relative;outline: 0}
 .banner__rightcontainer{margin:46px 10px 0 37px}
 .banner__leftcontainer{margin:33px 0 0 37px}
 .banner__image{width:100%;vertical-align:middle}
@@ -25,7 +28,7 @@
 .banner__recipedetails{font-family:Roboto-Light;font-size:18px;line-height:23px;letter-spacing:.3px}
 .banner__rightarrow{float:right;width:16px;height:10px;text-indent:-99999em;background:url(../images/right__arrow.png) no-repeat;background-size:100%;margin-left:8px;margin-top:7px}
 .submit--Recipes{padding:15px 20px;font-family:Roboto-Regular;font-size:18px;letter-spacing:.13px}
-.search{width:90%;margin:0 auto;padding-top:50px}
+.search{width:90%;margin:0 auto;padding-top:50px;outline: 0}
 .search__title{color:#4a4a4a;font-family:Roboto-Regular;font-size:40px;letter-spacing:.3px}
 .search__panel{margin:40px 0 0;overflow:hidden;text-align:center}
 .search__filter{color:#fff;display:inline-block;background-color:#e95659;border-radius:4px 4px 0 0}
@@ -49,7 +52,7 @@
 .search__select::-ms-expand{display:none}
 .select{-webkit-appearance:none;-moz-appearance:none;appearance:none;background:url(../images/dropdown_arrow.png) 87% 50% no-repeat !important;background-size:auto; outline: 0}
 .select:hover{cursor:pointer}
-.search__searchbox{float:right;overflow:hidden;background:url(../images/search__icon.png) left no-repeat #f6f6f6 !important;padding:10px 10px 10px 30px;outline:0;font-family:Roboto-Regular;font-size:16px;width:96px}
+.search__searchbox{float:right;overflow:hidden;background:url(../images/search__icon.png) left no-repeat #f6f6f6 !important;padding:10px 0px 10px 30px;outline:0;font-family:Roboto-Regular;font-size:16px;width:96px}
 .search__iconpanal{text-decoration:none}
 .search__icon{width:24px;height:24px;margin-right:13px;float:left}
 .search__recipe{color:#4a4a4a;font-family:Roboto-Bold;font-size:18px;letter-spacing:.18px;float:left;margin-top:3px}
@@ -74,7 +77,7 @@
 .search__partitioncontainer{padding-left:15px}
 .search__foodTypeList{float:left}
 .search__type{float:left;width:100%}
-.menu{margin:0 auto;width:90%;padding:50px 0}
+.menu{margin:0 auto;width:90%;padding:50px 0;outline: 0}
 .menu__card{display:grid;grid-template-columns:repeat(4,1fr);grid-column-gap:30px;grid-row-gap:35px}
 .menu__date{float:left}
 .menu__dishtype{float:right}
@@ -106,7 +109,7 @@
 .content--center{text-align:center}
 .newsletter__control{width:calc(100% - 22px);margin-top:15px}
 .newsletter__submitsection{display:flex;justify-content:center}
-.footer{padding:75px 0;color:#4a4a4a}
+.footer{padding:75px 0;color:#4a4a4a;outline: 0}
 .footer__container{margin:0 auto;width:90%;overflow:hidden}
 .footer__sections{float:left;display:inline}
 .footer__history{float:left;width:20%}
@@ -122,7 +125,7 @@
 .footer--history{width:calc(20% - 12px);margin-right:12px}
 .footer--tips{width:calc(16% - 24px);margin-right:24px}
 .footer--contact{width:calc(16% - 12px);margin-right:12px}
-.footer--about{width:18.5%;float:right;font-family:Roboto-Light;font-size:18px;letter-spacing:.23px}
+.footer--about{width:18.5%;float:right;font-family:Roboto-Light;font-size:18px;letter-spacing:.23px;margin-right: 50px}
 .btn{background-color:#fff;border-radius:4px;color:#4a4a4a;border:none;outline:0}
 .btn:hover{cursor:pointer;opacity:.5}
 .text{resize:vertical;outline:0;border-radius:4px;border:none;background-color:#f6f6f6;color:#4a4a4a;font-family:Roboto-Regular;font-size:18px;letter-spacing:.23px;padding:12px 11px}
@@ -237,7 +240,7 @@
     .search__collapsed{margin-top:4px}
     .search__sort{margin-left:10px}
     .search__sortby{font-size:12px}
-    .search__searchbox{padding:8px 10px 6px 30px;width:78px;font-size:12px}
+    .search__searchbox{padding:8px 0px 6px 30px;width:78px;font-size:12px}
     .search__select{margin:0 0 0 10px;padding:5px 10px;width:125px}
     .search__recipe{font-size:12px}
     .search__foodcontainer{padding:25px 0}
