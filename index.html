@@ -13,7 +13,10 @@
 <body class="body">
     <ul class="skip__links">
         <li><a href="#grillnav">Skip to navigation</a></li>
-        <li><a href="#grillmenu">Skip to recipes</a></li>
+        <li><a href="#gpbanner">Skip to Banner</a></li>
+        <li><a href="#gpmenu">Skip to recipes</a></li>
+        <li><a href="#gpfriend">Skip to addfriend</a></li>
+        <li><a href="#gpfooter">Skip to footer</a></li>
     </ul>
     <header class="navigation" >
         <div class="navigation__container">
@@ -41,7 +44,7 @@
             </div>
         </div>
     </header>
-    <div class="banner" aria-label="banner screen" >
+    <div id="gpbanner" class="banner" aria-label="banner screen" >
         <img src="./images/bannerimage.png" class="banner__image" aria-labelledby="bnRecipe bnRecipedtl" alt="banner"/>
         <section class="banner__recipedescription">
             <div class="banner__rightcontainer">
@@ -63,7 +66,7 @@
             </div>
         </section>
     </div>
-    <div class="search" >
+    <div id="gpsearch" class="search" >
         <h1 tabindex="0" class="search__title">Our Recipes</h1>
         <ul class="search__panel" aria-label="search navigation">
             <li tabindex="0" class="search__filter recipeby--width">
@@ -213,7 +216,7 @@
                 type="text" name="search" />
         </div>
     </div>
-    <main id="grillmenu" class="menu">
+    <main id="gpmenu" class="menu">
         <div class="menu__card" aria-label="this is menu card">
             <article tabindex="0" class="menu__item">
                 <div class="menu__description">
@@ -367,7 +370,7 @@
             </a>
         </div>
     </main>
-    <div class="newsletter">
+    <div id="gpfriend" class="newsletter">
         <div class="newsletter__container">
             <span class="newsletter__heading">Spread the world !</span>
             <p class="newsletter__description">Our recipes are awesome, sign up to our newsletter and invite friends to join the Grilled Prawn cult</p>
@@ -408,7 +411,7 @@
 
         </div>
     </div>
-    <footer class="footer" aria-label="this is footer">
+    <footer id="gpfooter" class="footer" aria-label="this is footer">
         <div class="footer__container">
             <div class="footer__sections footer--recipes">
                 <span class="footer__header" aria-labelledby="ftOurrecipe">Our Recipes</span>
