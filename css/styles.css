@@ -37,6 +37,7 @@
 .float--right{float:right;background-color:#f6f6f6}
 .search__filterbox{padding:15px 13px 30px 15px;border-radius:4px 4px 0 0;display:inline-block;width:calc(100% - 28px)}
 .search__filterbox:hover{cursor:pointer}
+.padding-bt--15px{padding-bottom: 15px;}
 .search__filterbyrecipes{color:#fff;font-family:Roboto-Regular;font-size:18px;float:left}
 .search__mobile{display:none}
 .container{width:1200px;height:1200px;padding:30px;background-color:#333}
