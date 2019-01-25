@@ -1,157 +1,40 @@
-class Helper {
-
-  constructor() {
-
-  }
-  /**
-   * fatch element by queryselector 
-   * @param {*} context 
-   * @param {*} selectors
-   */
-  static byqueryselector(context, selectors) {
-    return context.querySelector(selectors);
-  }
-
-  /**
-   * fetch elements based on given selectors
-   * @param {*} context 
-   * @param  {...any} selectors 
-   */
-  static byqueryselectorAll(context, ...selectors) {
-    return context.querySelectorAll(selectors.join(','));
-  }
-
-  /**
-   * add class function
-   * @param {*} elem 
-   * @param {*} cls 
-   */
-  static addclass({ elem = undefined, cls = '' }) {
-    if (elem) {
-      elem.classList.add(cls);
-    }
-  }
-
-  /**
-   * remove class function
-   * @param {*} elem 
-   * @param {*} cls 
-   */
-  static removeclass({ elem = undefined, cls = '' }) {
-    if (elem) {
-      elem.classList.remove(cls);
-    }
-  }
-
-  /**
-   * check class is available 
-   * @param {*} elem 
-   * @param {*} cls 
-   */
-  static containsclass({ elem = undefined, cls = '' }) {
-    if (elem) {
-      return elem.classList.contains(cls);
-    }
-  }
-  /**
-  * 
-  * @param {*} elem 
-  * @param {*} cls 
-  */
-  static toggleclass({ elem = undefined, cls = '' }) {
-    elem.classList.toggle(cls);
-  }
-  /**
-   * create new duplicate child container
-   * @param {*} elem 
-   */
-  static newNode(elem) {
-    return elem.cloneNode(true);
-  }
-
-  /**
-   * add attribute with given name and value
-   * @param {*} elem 
-   * @param {*} name 
-   * @param {*} value 
-   */
-  static addAttribute(elem, name, value) {
-    return elem.setAttribute(name, value);
-  }
-
-  /**
-   * remove attribute from element
-   * @param {*} elem 
-   * @param {*} name 
-   */
-  static removeAttribute(elem, name) {
-    return elem.removeAttribute(name);
-  }
-
-  /**
-   * append node within elem
-   * @param {*} elem 
-   * @param {*} node 
-   */
-  static appendNode(elem, node) {
-    elem.appendChild(node);
-  }
-
-  /**
-   * get list of standard messages
-   */
-  static getMessages() {
-    return { error: "kindly add at least one friends", success: "Request send successfully" };
-  }
-
-}
-
-/**
- * check the length of clone container
- * @param {*} clonecontainer 
- */
-const isLimitReached = (clonecontainer) => {
-  return (clonecontainer.children.length === MAX_LIMIT);
-}
-/**
- * friend list add section block accessibility base on the maximum count
- * @param {*} container 
- * @param {*} clonecontainer 
- */
-const checkfriendlistStatus = (container, clonecontainer) => {
-  if (isLimitReached(clonecontainer)) {
-    Helper.addclass({ elem: container, cls: 'hide' });
-  } else if (Helper.containsclass({ elem: container, cls: 'hide' })) {
-    Helper.removeclass({ elem: container, cls: 'hide' });
-  }
-}
-
+import Helper from './helper.js'
+import * as Custom from './util.js'
+import * as Constant from './constant.js'
 (function () {
-    let _searchContainer = Helper.byqueryselector(document, '.search__filter');
-    _searchContainer.onclick = (event) => {
-    let _foodContainer = Helper.byqueryselector(document, '.search__foodcontainer');
-    let _searchCollapsed = Helper.byqueryselector(document, '.search__collapsed');
-    let _searchbox = Helper.byqueryselector(_searchContainer,'.search__filterbox');
-    Helper.toggleclass({ elem: _searchCollapsed, cls: 'search__switch' });
-    if (!Helper.containsclass({ elem: _foodContainer, cls: 'show' })) {
-      Helper.addclass({ elem: _foodContainer, cls: 'show' });
-      Helper.addAttribute(_searchbox,'aria-selected',true);
+  let _searchContainer = Helper.byqueryselector(document, Constant.selector.class.FILTER);
+  let _allRecipeslist = Helper.byqueryselectorAll(document, Constant.selector.element.input.CHECKBOX);
+  for (let _recipe of _allRecipeslist) {
+     if(Helper.activecheckbox().includes(_recipe.id)){_recipe.click()};
+    _recipe.onclick = (event) => {
+      (event.target.checked) ? Helper.addAttribute(event.target, Constant.aria.CHECKED, true) : Helper.addAttribute(event.target, Constant.aria.CHECKED, false);
+    }
+  }
+  _searchContainer.onclick = (event) => {
+    let _foodContainer = Helper.byqueryselector(document, Constant.selector.class.CONTAINER);
+    let _searchCollapsed = Helper.byqueryselector(document, Constant.selector.class.COLLAPSED);
+    let _searchbox = Helper.byqueryselector(_searchContainer, Constant.selector.class.FILTERBOX);
+    if(!(Helper.containsclass({ elem: _searchCollapsed, cls : 'search__switch'}))){
+      Helper.addclass({elem: _searchCollapsed, cls: 'search__switch'});
+    }
+    else{
+      Helper.toggleclass({ elem: _searchCollapsed, cls: Constant.common.SWITCH });
+    }
+    if (!Helper.containsclass({ elem: _foodContainer, cls: Constant.common.HIDE })) {
+      Helper.addclass({ elem: _foodContainer, cls: Constant.common.HIDE });
+      Helper.addAttribute(_searchbox, Constant.aria.EXPANDED, true);
     }
     else {
-      Helper.removeclass({ elem: _foodContainer, cls: 'show' });
-      Helper.addAttribute(_searchbox,'aria-selected',false);
+      Helper.removeclass({ elem: _foodContainer, cls: Constant.common.HIDE });
+      Helper.addAttribute(_searchbox, Constant.aria.EXPANDED, false);
     }
   }
-})();
 
-const MAX_LIMIT = 5; //maximum limit of friends matrix
-let counter = 0; // initial counter value
-let friends = [];
-// load commencing elements
+})();
 (function () {
-  let _container = Helper.byqueryselector(document, "#newsletter-org");
-  let _btnRemove = Helper.byqueryselector(_container, "#btn_remove");
-  Helper.addclass({ elem: _btnRemove, cls: 'hide' });
+  let _container = Helper.byqueryselector(document, Constant.selector.id.NEWSLETTER);
+  let _btnRemove = Helper.byqueryselector(_container, Constant.selector.id.REMOVE);
+  Helper.addclass({ elem: _btnRemove, cls: Constant.common.HIDE });
 })();
 
 /**
@@ -159,119 +42,75 @@ let friends = [];
  * @param {*} event 
  * @param {*} form 
  */
-const btnAdd_click = (event, form) => {
+let COUNTER = 0;
+ window.btnAdd_click = (event, form) => {
   event.preventDefault();
-  counter++;
   // initially add new dublicate friends container when friends count 0.
-  if (friends.length == 0) {
-    let elem = document.createElement('div');
-    elem.setAttribute('id', 'newsletter-dup-grid');
-    Helper.addclass({ elem: elem, cls: 'newsletter__friendlist' });
-    let maincontainer = Helper.byqueryselector(document, ".newsletter__subscription");
+  if (Custom.friends.size == 0) {
+    let elem = document.createElement(Constant.selector.element.DIV);
+    elem.setAttribute('id', Constant.common.CLONE);
+    Helper.addclass({ elem: elem, cls: Constant.common.LIST });
+    let maincontainer = Helper.byqueryselector(document, Constant.selector.class.SUBSCRIPTION);
     maincontainer.prepend(elem);
   }
   // create new clone for dublicate friends container
-  let _cloneContainer = Helper.byqueryselector(document, "#newsletter-dup-grid");
-  let _container = Helper.byqueryselector(document, "#newsletter-org");
-  let _node = Helper.newNode(_container);
-  let _btnAdd = Helper.byqueryselector(_node, "#btn_add");
-  let _btnRemove = Helper.byqueryselector(_node, "#btn_remove");
-  Helper.addAttribute(_node, "id", `clone${counter}`);
-  Helper.addAttribute(_btnRemove, "id", counter);
-  Helper.addclass({ elem: _btnAdd, cls: 'hide' });
-  Helper.removeclass({ elem: _btnRemove, cls: 'hide' });
-  pushFriend(form, counter);
-  readOnlyTextboxes(_node);
-  Helper.appendNode(_cloneContainer, _node);
-  updateGridBorder(_cloneContainer);
-  // clone creation complited
-  // check status with max count for visibility of main friend container.
-  checkfriendlistStatus(_container, _cloneContainer);
-  form.reset();
-  form.name.focus();
-}
-
-/**
- * maker textboxes readonly of given node
- * @param {*} node 
- */
-const readOnlyTextboxes = (node) => {
-  const _textboxes = Helper.byqueryselectorAll(node, "input[type='text']", "input[type='email']");
-  for (let _textbox of _textboxes) {
-    _textbox.readOnly = true;
-    Helper.removeAttribute(_textbox, 'aria-required');
+  if (!(Custom.isfriendexist(form.elements[2].value))) {
+    COUNTER++;
+    let _cloneContainer = Helper.byqueryselector(document, Constant.selector.id.GRIDCLONE);
+    let _container = Helper.byqueryselector(document, Constant.selector.id.GRIDMAIN);
+    let _node = Helper.newNode(_container);
+    let _btnAdd = Helper.byqueryselector(_node, Constant.selector.id.ADD);
+    let _btnRemove = Helper.byqueryselector(_node, Constant.selector.id.REMOVE);
+    Helper.addAttribute(_node, "id", `clone${COUNTER}`);
+    Helper.addAttribute(_btnRemove, "id",COUNTER);
+    Helper.addclass({ elem: _btnAdd, cls: Constant.common.HIDE });
+    Helper.removeclass({ elem: _btnRemove, cls: Constant.common.HIDE });
+    Custom.pushFriend(form,COUNTER);
+    Custom.readOnlyTextboxes(_node);
+    Helper.appendNode(_cloneContainer, _node);
+    Custom.updateGridBorder(_cloneContainer);
+    Custom.checkfriendlistStatus(_container, _cloneContainer);
+    form.reset();
+    form.name.focus();
+  }
+  else{
+    let{emailerror : error} = Helper.getMessages();
+    alert(`${error} ${form.elements[2].value}`);
   }
 }
-
-/**
- * fill friends array
- * @param {*} form 
- */
-const pushFriend = (form, id) => {
-  let data = {};
-  for (let elem of form.elements) {
-    if (elem.name) {
-      data[elem.name] = elem.value;
-    }
-  }
-  data.id = id;
-  friends.push(data);
-}
-
-/**
- * remove friends array base on count id
- * @param {*} id 
- */
-const removeFriend = id => {
-  let idx = friends.findIndex(e => e.id === +id);
-  friends.splice(idx, 1);
-}
-
 /**
  * send friends, clear array
  * remove all childs from duplicate friens container
  * @param {*} form 
  */
-const btnsend_click = form => {
-  if (friends.length > 0) {
-    let _cloneContainer = Helper.byqueryselector(document, "#newsletter-dup-grid");
-    let _container = Helper.byqueryselector(document, "#newsletter-org");
+  window.btnsend_click = form => {
+  if (Custom.friends.size > 0) {
+    let _cloneContainer = Helper.byqueryselector(document, Constant.selector.id.GRIDCLONE);
+    let _container = Helper.byqueryselector(document, Constant.selector.id.GRIDMAIN);
     _cloneContainer.remove();
-    Helper.removeclass({ elem: _container, cls: 'hide' });
-    let { success } = Helper.getMessages();
+    Helper.removeclass({ elem: _container, cls: Constant.common.HIDE});
+    let { sendsuccess : success } = Helper.getMessages();
     alert(success);
-    console.log(`Newsletter JSON Request: ${JSON.stringify(friends)}`);
-    friends = [];
+    console.log(`%c Newsletter JSON Request: ${Custom.friends}`,'color: orange');
+    Custom.friends.clear();
   } else {
-    let { error } = Helper.getMessages();
+    let { senderror : error } = Helper.getMessages();
     alert(error);
   }
 }
-
-/**
- * update element's border which is added in the clone container
- * @param {*} container 
- */
-const updateGridBorder = (container) => {
-  Helper.removeclass({ elem: container.lastChild, cls: 'grid--noborder' });
-  if (container.lastChild && friends.length === MAX_LIMIT) {
-    Helper.addclass({ elem: container.lastChild, cls: 'grid--noborder' });
-  }
-}
-
 /**
  * remove friend from friens array base on count id.
  * @param {*} elem 
  */
-const btnRemove_click = elem => {
-  let _cloneContainer = Helper.byqueryselector(document, "#newsletter-dup-grid");
+ window.btnRemove_click = elem => {
+  let _cloneContainer = Helper.byqueryselector(document, Constant.selector.id.GRIDCLONE);
   let _trashContainer = Helper.byqueryselector(document, `#clone${elem.id}`);
-  let _container = Helper.byqueryselector(document, "#newsletter-org");
+  let _container = Helper.byqueryselector(document, Constant.selector.id.GRIDMAIN);
   _trashContainer.remove();
-  removeFriend(elem.id);
-  updateGridBorder(_cloneContainer);
-  checkfriendlistStatus(_container, _cloneContainer);
-  if (friends.length === 0) {
+  Custom.removeFriend(elem.id);
+  Custom.updateGridBorder(_cloneContainer);
+  Custom.checkfriendlistStatus(_container, _cloneContainer);
+  if (Custom.friends.size === 0) {
     _cloneContainer.remove();
   }
 }
