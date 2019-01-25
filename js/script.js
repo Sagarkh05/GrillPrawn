@@ -1,6 +1,6 @@
-import Helper from './helper.js'
-import * as Custom from './util.js'
-import * as Constant from './constant.js'
+import Helper from './helper.js';
+import * as Custom from './util.js';
+import * as Constant from './constant.js';
 (function () {
   let _searchContainer = Helper.byqueryselector(document, Constant.selector.class.FILTER);
   let _allRecipeslist = Helper.byqueryselectorAll(document, Constant.selector.element.input.CHECKBOX);
@@ -14,11 +14,13 @@ import * as Constant from './constant.js'
     let _foodContainer = Helper.byqueryselector(document, Constant.selector.class.CONTAINER);
     let _searchCollapsed = Helper.byqueryselector(document, Constant.selector.class.COLLAPSED);
     let _searchbox = Helper.byqueryselector(_searchContainer, Constant.selector.class.FILTERBOX);
-    if(!(Helper.containsclass({ elem: _searchCollapsed, cls : 'search__switch'}))){
-      Helper.addclass({elem: _searchCollapsed, cls: 'search__switch'});
+    if(!(Helper.containsclass({ elem: _searchCollapsed, cls : Constant.common.SWITCH}))){
+      Helper.addclass({elem: _searchCollapsed, cls: Constant.common.SWITCH});
+      Helper.addclass({elem:_searchbox, cls: Constant.common.PADDBT15});
     }
     else{
       Helper.toggleclass({ elem: _searchCollapsed, cls: Constant.common.SWITCH });
+      Helper.toggleclass({elem:_searchbox,cls: Constant.common.PADDBT15});
     }
     if (!Helper.containsclass({ elem: _foodContainer, cls: Constant.common.HIDE })) {
       Helper.addclass({ elem: _foodContainer, cls: Constant.common.HIDE });
