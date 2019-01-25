@@ -11,43 +11,48 @@
 </head>
 
 <body class="body">
-    <header class="navigation">
+    <ul class="skip__links">
+        <li><a href="#grillnav">Skip to navigation</a></li>
+        <li><a href="#grillmenu">Skip to recipes</a></li>
+    </ul>
+    <!-- <a tabindex="1" href="#dashboard__main" class="skiplink">Skip to main content</a> -->
+    <header class="navigation" >
         <div class="navigation__container">
             <div class="navigation__leftcontainer">
-                <h1 class="navigation__logocontext" aria-label="grilled prawn logo">
+                <h1 tabindex="0" class="navigation__logocontext" aria-label="grilled prawn logo">
                     <a class="navigation__logo" href="javascript:void(0);" title="Grilled Prawn">Grilled Prawn</a>
                 </h1>
                 <p class="navigation__title" aria-label="the griled prawn">The Grilled Prawn</p>
             </div>
             <div class="navigation__rightcontainer">
-                <ul class="navigation__list" aria-label="main navigation">
-                    <li class="navigation__items">
+                <ul id="grillnav" class="navigation__list" aria-label="main navigation">
+                    <li tabindex="0" class="navigation__items">
                         <a class="navigation__item item--active" href="javascript:void(0);" aria-expanded="false" title="RECIPES">RECIPES</a>
                     </li>
-                    <li class="navigation__items">
+                    <li tabindex="0" class="navigation__items">
                         <a class="navigation__item" href="javascript:void(0);" aria-expanded="false" title="DRINK">DRINK</a>
                     </li>
-                    <li class="navigation__items">
+                    <li tabindex="0" class="navigation__items">
                         <a class="navigation__item" href="javascript:void(0);" aria-expanded="false" title="DECORATIONS">DECORATIONS</a>
                     </li>
-                    <li class="navigation__items mrg-rt--0">
+                    <li tabindex="0" class="navigation__items mrg-rt--0">
                         <a class="navigation__item" href="javascript:void(0);" aria-expanded="false" title="ABOUT THE GRILLED PRAWN">ABOUT THE GRILLED PRAWN</a>
                     </li>
                 </ul>
             </div>
         </div>
     </header>
-    <div class="banner" aria-label="banner screen">
+    <div class="banner" aria-label="banner screen"  tabindex="0">
         <img src="./images/bannerimage.png" class="banner__image" aria-labelledby="bnRecipe bnRecipedtl" alt="banner"/>
         <section class="banner__recipedescription">
             <div class="banner__rightcontainer">
-                <h2 class="banner__latestrecipe">
+                <h2 tabindex="0" class="banner__latestrecipe">
                     LATEST RECIPE
                 </h2>
-                <h3 id="bnRecipe" class="banner__recipe">
+                <h3 tabindex="0" id="bnRecipe" class="banner__recipe">
                     Baked Polenta with Cheese and Mushrooms.
                 </h3>
-                <p id="bnRecipedtl" class="banner__recipedetails">
+                <p tabindex="0" id="bnRecipedtl" class="banner__recipedetails">
                     Polenta, goat cheese, Italian sausage, and cremini mushrooms. All together this will make for pretty darn good side dish
                     to a lovely salad. Go for it.
                 </p>
@@ -59,16 +64,16 @@
             </div>
         </section>
     </div>
-    <div class="search">
-        <h1 class="search__title">Our Recipes</h1>
+    <div class="search" >
+        <h1 tabindex="0" class="search__title">Our Recipes</h1>
         <ul class="search__panel" aria-label="search navigation">
-            <li class="search__filter recipeby--width">
+            <li tabindex="0" class="search__filter recipeby--width">
                 <a class="search__filterbox" href="javascript:void(0);" aria-controls="fdcontainer"  aria-expanded="false" title="recipe filter">
                     <span class="search__filterbyrecipes">Filter recipes by</span>
                     <span class="search__collapsed "></span>
                 </a>
             </li>
-            <li class="search__filter sortby--width rsp--desktop">
+            <li tabindex="0" class="search__filter sortby--width rsp--desktop">
                 <div class="search__sort">
                     <span class="search__sortby" aria-label="sort recipes">Sort by</span>
                     <select class="select search__select">
@@ -76,7 +81,7 @@
                     </select>
                 </div>
             </li>
-            <li class="search__filter float--right rsp--desktop">
+            <li tabindex="0" class="search__filter float--right rsp--desktop">
                 <input class="search__searchbox" aria-label="search recipes" aria-valuemin="3" aria-valuemax="10" minlength="3" maxlength="10" placeholder="Search recipe"  type="text"
                     name="search" />
             </li>
@@ -88,7 +93,7 @@
                         Food type:
                     </span>
                     <ul class="search__foodTypeList" aria-label="here the list of food type">
-                        <li class="search__fooditems">
+                        <li  class="search__fooditems">
                             <div class="checkbox">
                                 <input class="checkbox__input" aria-checked="false" id="Appetisers" name="Appetisers" type="checkbox" />
                                 <label class="checkbox__label" aria-label="Appetisers" for="Appetisers">Appetisers</label>
@@ -209,7 +214,7 @@
                 type="text" name="search" />
         </div>
     </div>
-    <main class="menu">
+    <main id="grillmenu" class="menu"  tabindex="0">
         <div class="menu__card" aria-label="this is menu card">
             <article class="menu__item">
                 <div class="menu__description">
@@ -363,7 +368,7 @@
             </a>
         </div>
     </main>
-    <div class="newsletter">
+    <div class="newsletter"  tabindex="0">
         <div class="newsletter__container">
             <span class="newsletter__heading">Spread the world !</span>
             <p class="newsletter__description">Our recipes are awesome, sign up to our newsletter and invite friends to join the Grilled Prawn cult</p>
@@ -404,7 +409,7 @@
 
         </div>
     </div>
-    <footer class="footer" aria-label="this is footer">
+    <footer class="footer" aria-label="this is footer" tabindex="0">
         <div class="footer__container">
             <div class="footer__sections footer--recipes">
                 <span class="footer__header" aria-labelledby="ftOurrecipe">Our Recipes</span>
