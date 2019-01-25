@@ -4,7 +4,8 @@ export const common = {
     NOBORDER: 'grid--noborder',
     SWITCH: 'search__switch',
     LIST: 'newsletter__friendlist',
-    CLONE: 'newsletter-dup-grid'
+    CLONE: 'newsletter-dup-grid',
+    PADDBT15: 'padding-bt--15px'
 }
 
 export const aria = {
@@ -20,7 +21,6 @@ export const selector = {
         COLLAPSED: '.search__collapsed',
         FILTERBOX: '.search__filterbox',
         SUBSCRIPTION: '.newsletter__subscription'
-
     },
     id: {
         NEWSLETTER: '#newsletter-org',
