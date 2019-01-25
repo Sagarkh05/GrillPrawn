@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-    <script src="js/script.js" defer async></script>
+    <script type="module"  src="js/script.js" defer async></script>
     <title>Grilled Prawn</title>
 </head>
 
@@ -38,7 +38,7 @@
         </div>
     </header>
     <div class="banner" aria-label="banner screen">
-        <img src="./images/bannerimage.png" class="banner__image" aria-labelledby="bnRecipe bnRecipedtl" alt="banner">
+        <img src="./images/bannerimage.png" class="banner__image" aria-labelledby="bnRecipe bnRecipedtl" alt="banner"/>
         <section class="banner__recipedescription">
             <div class="banner__rightcontainer">
                 <h2 class="banner__latestrecipe">
@@ -63,9 +63,9 @@
         <h1 class="search__title">Our Recipes</h1>
         <ul class="search__panel" aria-label="search navigation">
             <li class="search__filter recipeby--width">
-                <a class="search__filterbox" href="javascript:void(0);" aria-controls="fdcontainer" aria-selected="false" title="recipe filter">
+                <a class="search__filterbox" href="javascript:void(0);" aria-controls="fdcontainer"  aria-expanded="false" title="recipe filter">
                     <span class="search__filterbyrecipes">Filter recipes by</span>
-                    <span class="search__collapsed search__switch"></span>
+                    <span class="search__collapsed "></span>
                 </a>
             </li>
             <li class="search__filter sortby--width rsp--desktop">
@@ -90,25 +90,25 @@
                     <ul class="search__foodTypeList" aria-label="here the list of food type">
                         <li class="search__fooditems">
                             <div class="checkbox">
-                                <input class="checkbox__input" id="Appetisers" name="Appetisers" type="checkbox" />
+                                <input class="checkbox__input" aria-checked="false" id="Appetisers" name="Appetisers" type="checkbox" />
                                 <label class="checkbox__label" aria-label="Appetisers" for="Appetisers">Appetisers</label>
                             </div>
                         </li>
                         <li class="search__fooditems">
                             <div class="checkbox">
-                                <input class="checkbox__input" id="Mains" name="Mains" type="checkbox" />
+                                <input class="checkbox__input" aria-checked="false" id="Mains" name="Mains" type="checkbox" />
                                 <label class="checkbox__label" aria-label="Mains" for="Mains">Mains</label>
                             </div>
                         </li>
                         <li class="search__fooditems">
                             <div class="checkbox">
-                                <input class="checkbox__input" id="Desserts" name="Desserts" type="checkbox" />
+                                <input class="checkbox__input" aria-checked="false" id="Desserts" name="Desserts" type="checkbox" />
                                 <label class="checkbox__label" aria-label="Desserts" for="Desserts">Desserts</label>
                             </div>
                         </li>
                         <li class="search__fooditems">
                             <div class="checkbox">
-                                <input class="checkbox__input" id="Occasions" name="Occasions" type="checkbox" />
+                                <input class="checkbox__input" aria-checked="false" id="Occasions" name="Occasions" type="checkbox" />
                                 <label class="checkbox__label" aria-label="special occasions" for="Occasions">Special Occasions</label>
                             </div>
                         </li>
@@ -123,73 +123,74 @@
                     <ul class="search__type" aria-label="here the list of countries">
                         <li class="search__cusineitems">
                             <div class="checkbox">
-                                <input class="checkbox__input" id="Italian" name="Italian" type="checkbox" />
+                                <input class="checkbox__input" aria-checked="false" id="Italian" name="Italian" type="checkbox" />
                                 <label class="checkbox__label" aria-label="Italian" for="Italian">Italian (34)</label>
                             </div>
                         </li>
                         <li class="search__cusineitems">
                             <div class="checkbox">
-                                <input class="checkbox__input" id="Chinese" name="Chinese" type="checkbox" />
+                                <input class="checkbox__input" aria-checked="false" id="Chinese" name="Chinese" type="checkbox" />
                                 <label class="checkbox__label" aria-label="Chinese" for="Chinese">Chinese (18)</label>
                             </div>
                         </li>
                         <li class="search__cusineitems">
                             <div class="checkbox">
-                                <input class="checkbox__input" id="Polish" name="Polish" type="checkbox" />
+                                <input class="checkbox__input" aria-checked="false" id="Polish" name="Polish" type="checkbox" />
                                 <label class="checkbox__label" aria-label="polish" for="Polish">Polish (2)</label>
                             </div>
                         </li>
                         <li class="search__cusineitems">
                             <div class="checkbox">
-                                <input class="checkbox__input" id="French" name="French" type="checkbox" />
+                                <input class="checkbox__input" aria-checked="false" id="French" name="French" type="checkbox" />
                                 <label class="checkbox__label" aria-label="french" for="French">French (30)</label>
                             </div>
                         </li>
                         <li class="search__cusineitems">
                             <div class="checkbox">
-                                <input class="checkbox__input" id="Indian" name="Indian" type="checkbox" />
+                                <input class="checkbox__input" aria-checked="false" id="Indian" name="Indian" type="checkbox" />
                                 <label class="checkbox__label" aria-label="indian" for="Indian">Indian (13)</label>
                             </div>
                         </li>
                         <li class="search__cusineitems">
                             <div class="checkbox">
-                                <input class="checkbox__input" id="Danish" name="Danish" type="checkbox" />
+                                <input class="checkbox__input" aria-checked="false" id="Danish" name="Danish" type="checkbox" />
                                 <label class="checkbox__label" aria-label="danish" for="Danish">Danish (3)</label>
                             </div>
                         </li>
                         <li class="search__cusineitems">
                             <div class="checkbox">
-                                <input class="checkbox__input" id="Belgian" name="Belgian" type="checkbox" />
-                                <label class="checkbox__label" aria-label="belgian" for="Belgian">Belgian (7)</label>
-                            </div>
-                        </li>
-                        <li class="search__cusineitems">
-                            <div class="checkbox">
-                                <input class="checkbox__input" id="Spanish" name="Spanish" type="checkbox" />
+                               
+                                <input class="checkbox__input" aria-checked="false" id="Spanish" name="Spanish" type="checkbox" />
                                 <label class="checkbox__label" aria-label="spanish" for="Spanish">Spanish (22)</label>
                             </div>
                         </li>
                         <li class="search__cusineitems">
                             <div class="checkbox">
-                                <input class="checkbox__input" id="Thai" name="Thai" type="checkbox" />
-                                <label class="checkbox__label" aria-label="thai" for="Thai">Thai (10)</label>
+                                    <input class="checkbox__input" aria-checked="false" id="Thai" name="Thai" type="checkbox" />
+                                    <label class="checkbox__label" aria-label="thai" for="Thai">Thai (10)</label>
                             </div>
                         </li>
                         <li class="search__cusineitems">
                             <div class="checkbox">
-                                <input class="checkbox__input" id="Norwegian" name="Norwegian" type="checkbox" />
+                                    <input class="checkbox__input" aria-checked="false" id="Belgian" name="Belgian" type="checkbox" />
+                                    <label class="checkbox__label" aria-label="belgian" for="Belgian">Belgian (7)</label>
+                            </div>
+                        </li>
+                        <li class="search__cusineitems">
+                            <div class="checkbox">
+                                <input class="checkbox__input" aria-checked="false" id="Norwegian" name="Norwegian" type="checkbox" />
                                 <label class="checkbox__label" aria-label="nortwegion" for="Norwegian">Norwegian (4)</label>
                             </div>
                         </li>
                         <li class="search__cusineitems">
                             <div class="checkbox">
-                                <input class="checkbox__input" id="Persian" name="Persian" type="checkbox" />
+                                <input class="checkbox__input" aria-checked="false" id="Persian" name="Persian" type="checkbox" />
                                 <label class="checkbox__label" aria-label="persion" for="Persian">Persian (13)</label>
                             </div>
                         </li>
                         <li class="search__cusineitems">
                             <div class="checkbox">
-                                <input class="checkbox__input" id="Peruvian" name="Peruvian" type="checkbox" />
+                                <input class="checkbox__input" aria-checked="false" id="Peruvian" name="Peruvian" type="checkbox" />
                                 <label class="checkbox__label" aria-label="peruvian" for="Peruvian">Peruvian (3)</label>
                             </div>
                         </li>
@@ -373,7 +374,7 @@
                             <label class="newsletter__label" for="txtName">Name</label>
                             <input class="text newsletter__control" aria-label="enter firstname" aria-required="true" aria-invalid="true" name="name"
                                 minlength="3" maxlength="10" aria-valuemin="3" aria-valuemax="10" pattern="[A-Za-z -]+" type="text" id="txtName" autocomplete="off"
-                                placeholder="Name" required>
+                                placeholder="Name" required/>
                         </div>
                         <div class="newsletter__item">
                             <label class="newsletter__label" for="txtSurname">Surname</label>
@@ -445,7 +446,5 @@
             </div>
         </div>
     </footer>
-
 </body>
-
 </html>
