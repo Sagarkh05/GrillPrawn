@@ -1,7 +1,7 @@
 import Helper from './helper.js'
 import * as Constant from './constant.js'
 export let friends = new Set();
-const MAX_LIMIT = 5;
+const MAX_LIMIT = 5; // Default counter value 
 /**
  * check record present in friend array
  * @param {*} attr 
